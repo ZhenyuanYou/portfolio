@@ -97,7 +97,7 @@
 
   /* HERO PHOTO CARD */
   .hero-card { background: var(--surface); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
-  .hero-card-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; background: var(--navy3); display: block; }
+  .hero-card-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: center top; background: var(--navy3); display: block; }
   .hero-card-placeholder {
     width: 100%; aspect-ratio: 3/4; background: var(--navy3);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -269,11 +269,7 @@
 
     <!-- PHOTO CARD -->
     <div class="hero-card">
-      <!--
-        ✏️ 替换照片：把 src 改成你的文件名，如 src="photo.jpg"
-        把照片和 index.html 一起上传到 GitHub repo 即可
-      -->
-      <img class="hero-card-photo" src="your-photo.jpg" alt="Zhenyuan You"
+      <img class="hero-card-photo" src="photo.jpg" alt="Zhenyuan You"
         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"/>
       <div class="hero-card-placeholder" style="display:none;">
         <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35">
@@ -429,6 +425,29 @@
         <div class="future">
           <p>Future versions could integrate real-time flight prices, hotel availability, and transportation schedules. Additional features — packing lists, travel safety advice, and personalized recommendations based on user preferences — would further enhance the assistant's utility.</p>
         </div>
+
+        <div class="sub-title">Description</div>
+        <div class="insight">
+          <p>The Smart Travel Planner is a custom AI chatbot built on OpenAI's GPT Builder platform. It functions as a conversational travel assistant, guiding users through the trip planning process by asking about their destination, budget, and travel duration before generating a structured itinerary. The assistant was specifically configured for university students, prioritizing affordable options such as hostels, street food, public transportation, and free cultural attractions. Each itinerary output includes a suggested daily schedule, activity recommendations, food options, and estimated daily costs — making the planning process faster and more accessible for first-time or budget travelers.</p>
+        </div>
+
+        <div class="sub-title">Unique Value</div>
+        <div class="insight">
+          <p>What makes this project distinctive is the combination of <strong>engineering precision and user empathy</strong>. Unlike generic travel planning tools, the Smart Travel Planner was purpose-built for a specific user group — students with financial constraints — and refined through structured testing using real-world prompts. The design thinking process ensured that every feature decision was grounded in user needs rather than technical convenience. As a software engineer applying AI tools, I was able to iterate on the assistant's behavior systematically, bringing a level of rigor to the prototyping process that goes beyond typical classroom exercises.</p>
+        </div>
+
+        <div class="sub-title">Relevance</div>
+        <div class="insight">
+          <p>For AI/ML professionals and peers reviewing this portfolio, this artifact demonstrates three capabilities that are directly relevant to the field: first, the ability to <strong>apply generative AI to a real-world problem</strong> with a defined user group and measurable outcomes; second, practical experience with <strong>prompt engineering</strong> — understanding how input design shapes model behavior; and third, familiarity with the <strong>iterative development cycle</strong> that underpins responsible AI system design. These skills are increasingly essential as organizations integrate AI into products and workflows, making this artifact a meaningful signal of applied AI competency.</p>
+        </div>
+
+        <div class="sub-title">References</div>
+        <div class="insight">
+          <p style="margin-bottom:10px;">Brown, T., et al. (2020). <em>Language Models are Few-Shot Learners.</em> NeurIPS. <a href="https://arxiv.org/abs/2005.14165" target="_blank" style="color:var(--gold);">arxiv.org/abs/2005.14165</a></p>
+          <p style="margin-bottom:10px;">OpenAI. (2024). <em>GPT Builder Documentation.</em> <a href="https://platform.openai.com/docs" target="_blank" style="color:var(--gold);">platform.openai.com/docs</a></p>
+          <p>IDEO. (2023). <em>Design Thinking.</em> <a href="https://designthinking.ideo.com" target="_blank" style="color:var(--gold);">designthinking.ideo.com</a></p>
+        </div>
+
       </div>
     </div>
 
@@ -453,12 +472,5 @@
         <a href="#artifacts" class="btn-gold">View My Work</a>
       </div>
       <div class="contact-links">
-        <a href="mailto:zhenyuan.you@myemail.indwes.edu" class="contact-link">
-          <div class="link-icon">✉</div>zhenyuan.you@myemail.indwes.edu
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <p>© 2026 · <span class="fg">Zhe
+        <a href="/cdn-cgi/l/email-protection#ea90828f84939f8b84c493859faa87938f878b8386c483848e9d8f99c48f8e9f" class="contact-link">
+          <div class="link-icon">✉</div><span class="__cf_email__" data-cfemail="c0baa8a5aeb9b5a1aeeeb9afb580adb9a
