@@ -38,70 +38,69 @@
   main { margin-left: 80px; padding: 0 8%; }
   section { min-height: 100vh; padding: 100px 0; display: flex; flex-direction: column; justify-content: center; }
 
-  /* TYPOGRAPHY & HEADERS */
-  .section-header { display: flex; align-items: center; margin-bottom: 50px; }
+  /* TYPOGRAPHY */
+  .section-header { display: flex; align-items: center; margin-bottom: 60px; }
   .sec-num { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.5rem; margin-right: 15px; }
-  .sec-title { font-family: 'Playfair Display', serif; color: var(--white); font-size: 2.5rem; letter-spacing: 1px; }
+  .sec-title { font-family: 'Playfair Display', serif; color: var(--white); font-size: 2.8rem; letter-spacing: 1px; }
   .sec-line { height: 1px; background: var(--border); flex-grow: 1; margin-left: 30px; }
 
   /* HERO SECTION */
   .hero-pre { color: var(--gold); font-family: 'Inter', sans-serif; font-weight: 500; margin-bottom: 15px; display: block; letter-spacing: 2px; }
-  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 8vw, 5rem); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
-  .hero-sub { font-size: 1.5rem; color: var(--muted); max-width: 600px; margin-bottom: 40px; }
+  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 10vw, 6rem); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
+  .hero-sub { font-size: 1.6rem; color: var(--muted); max-width: 700px; margin-bottom: 40px; }
 
   /* ABOUT SECTION */
   .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 60px; align-items: start; }
-  .about-p { margin-bottom: 20px; font-size: 1.1rem; max-width: 600px; }
-  .profile-frame { position: relative; width: 100%; max-width: 320px; }
-  .profile-img { width: 100%; border-radius: 4px; filter: grayscale(100%) contrast(1.1); transition: 0.5s; position: relative; z-index: 2; }
-  .profile-img:hover { filter: none; }
+  .about-p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text); }
+  
+  /* PHOTO - NO FILTERS */
+  .profile-frame { position: relative; width: 100%; max-width: 350px; }
+  .profile-img { width: 100%; border-radius: 4px; position: relative; z-index: 2; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
   .profile-frame::after {
     content: ''; position: absolute; top: 20px; left: 20px; width: 100%; height: 100%;
-    border: 2px solid var(--gold); border-radius: 4px; z-index: 1; transition: 0.3s;
+    border: 2px solid var(--gold); border-radius: 4px; z-index: 1;
   }
 
-  /* ARTIFACTS / PROJECTS */
+  /* DETAILED PROJECT CARDS */
+  .project-container { margin-bottom: 100px; }
   .project-card {
-    background: var(--surface); border: 1px solid var(--border); padding: 40px;
-    border-radius: 4px; margin-bottom: 40px; transition: 0.4s ease; position: relative; overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border); padding: 50px;
+    border-radius: 8px; position: relative; transition: 0.4s ease;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
   }
-  .project-card:hover { transform: translateY(-10px); border-color: var(--gold); }
-  .proj-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
-  .proj-num { color: var(--gold); font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
-  .proj-title { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.8rem; margin: 10px 0; }
-  .proj-desc { color: var(--text); margin-bottom: 25px; line-height: 1.8; }
-  .proj-tags { display: flex; gap: 12px; flex-wrap: wrap; }
-  .tag { font-size: 0.75rem; color: var(--gold2); border: 1px solid var(--gold); padding: 4px 12px; border-radius: 20px; background: rgba(201,168,76,0.05); }
+  .project-card:hover { border-color: var(--gold); }
   
-  /* UPDATED ARTIFACT 02 SPECIFIC STYLE */
-  .proj-details-box {
-    margin-top: 25px; border-left: 2px solid var(--gold); padding-left: 20px; font-size: 0.95rem;
-  }
-  .proj-details-box p { margin-bottom: 10px; }
-  .proj-details-box strong { color: var(--white); }
+  .proj-label { color: var(--gold); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; display: block; }
+  .proj-title { font-family: 'Playfair Display', serif; color: var(--white); font-size: 2.2rem; margin-bottom: 25px; }
+  .proj-main-desc { font-size: 1.1rem; color: var(--white); margin-bottom: 30px; opacity: 0.9; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
 
-  /* PLACEHOLDERS */
-  .coming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-  .coming-card { border: 1px dashed var(--border); padding: 30px; border-radius: 4px; text-align: center; }
-  .coming-num { color: var(--muted); font-size: 0.8rem; margin-bottom: 10px; }
-  .coming-txt { color: var(--muted); font-style: italic; font-size: 0.9rem; }
+  /* GRID FOR INFO BOXES */
+  .proj-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+  .info-box h4 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.2); display: inline-block; padding-bottom: 4px; }
+  .info-box p { font-size: 0.95rem; line-height: 1.6; color: var(--text); }
+
+  .proj-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px; }
+  .tag { font-size: 0.8rem; color: var(--gold2); border: 1px solid var(--gold); padding: 6px 16px; border-radius: 4px; background: rgba(201,168,76,0.05); transition: 0.3s; }
+  .tag:hover { background: rgba(201,168,76,0.15); }
 
   /* BUTTONS */
   .btn-gold {
-    display: inline-block; padding: 12px 28px; border: 1px solid var(--gold);
+    display: inline-block; padding: 14px 32px; border: 1px solid var(--gold);
     color: var(--gold); text-decoration: none; border-radius: 4px; font-weight: 500;
-    transition: 0.3s; background: transparent; cursor: pointer; margin-top: 20px;
+    transition: 0.3s; background: transparent; cursor: pointer; font-size: 0.95rem; margin-top: 30px;
+    text-transform: uppercase; letter-spacing: 1px;
   }
-  .btn-gold:hover { background: rgba(201,168,76,0.1); box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+  .btn-gold:hover { background: var(--gold); color: var(--navy); }
 
-  /* CONTACT */
-  .contact-wrap { text-align: center; max-width: 700px; margin: 0 auto; }
-  .contact-link { color: var(--gold); font-size: 1.2rem; text-decoration: none; display: block; margin: 15px 0; font-family: 'Playfair Display', serif; }
+  /* PLACEHOLDERS */
+  .coming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+  .coming-card { border: 1px dashed var(--border); padding: 40px; border-radius: 8px; text-align: center; color: var(--muted); background: rgba(17,34,64,0.5); }
 
-  @media (max-width: 768px) {
+  @media (max-width: 992px) {
+    .proj-info-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
     .sidebar { display: none; }
     main { margin-left: 0; padding: 0 5%; }
-    .about-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -116,115 +115,118 @@
 
   <main>
     <section id="hero">
-      <span class="hero-pre">Hi, my name is</span>
+      <span class="hero-pre">Portfolio of</span>
       <h1 class="hero-name">Zhenyuan You</h1>
-      <p class="hero-sub">AI & Machine Learning Student | Exploring the future of intelligent systems through research and implementation.</p>
-      <a href="#artifacts" class="btn-gold">Explore My Work</a>
+      <p class="hero-sub">AI & Machine Learning Specialist | Student at IWU | Developing Intelligent Solutions Through Technical Implementation and Strategic Research.</p>
+      <a href="#artifacts" class="btn-gold">Explore Artifacts</a>
     </section>
 
     <section id="about">
       <div class="section-header">
-        <span class="sec-num">01</span>
-        <h2 class="sec-title">About Me</h2>
-        <div class="sec-line"></div>
+        <span class="sec-num">01</span><h2 class="sec-title">Personal Profile</h2><div class="sec-line"></div>
       </div>
       <div class="about-grid">
         <div class="about-info">
-          <p class="about-p">
-            I am a student currently specializing in **Artificial Intelligence and Machine Learning**. My goal is to bridge the gap between complex algorithms and practical applications that solve real-world problems.
-          </p>
-          <p class="about-p">
-            Through this portfolio, I aim to showcase my growth in technical proficiency, critical evaluation of AI competencies, and the ability to customize technical artifacts for diverse professional audiences.
-          </p>
-          <p class="about-p">
-            I am passionate about software architecture, data ethics, and the evolving landscape of deep learning.
-          </p>
-          <div class="proj-tags" style="margin-top:20px;">
-            <span class="tag">Python</span> <span class="tag">Machine Learning</span> 
-            <span class="tag">Deep Learning</span> <span class="tag">Data Analysis</span>
-            <span class="tag">Cloud Computing</span>
+          <p class="about-p">I am a scholar and developer focused on <strong>AI/ML competencies</strong>. My academic journey at IWU has equipped me with the skills to critically evaluate AI models and customize technical artifacts for diverse professional audiences.</p>
+          <p class="about-p">I believe that the most impactful AI solutions are built upon a deep understanding of historical milestones and ethical frameworks. My work ranges from direct code implementation to high-level strategic research.</p>
+          <div class="proj-tags">
+            <span class="tag">Machine Learning</span> <span class="tag">Neural Networks</span> <span class="tag">Data Strategy</span> <span class="tag">AI Ethics</span>
           </div>
         </div>
         <div class="profile-frame">
-          <img src="photo.jpg" alt="Profile" class="profile-img"/>
+          <img src="photo.jpg" alt="Zhenyuan You" class="profile-img"/>
         </div>
       </div>
     </section>
 
     <section id="artifacts">
       <div class="section-header">
-        <span class="sec-num">02</span>
-        <h2 class="sec-title">Portfolio Artifacts</h2>
-        <div class="sec-line"></div>
+        <span class="sec-num">02</span><h2 class="sec-title">Professional Artifacts</h2><div class="sec-line"></div>
       </div>
 
-      <div class="project-card">
-        <div class="proj-header">
-          <div class="proj-num">Artifact 01</div>
-          <h3 class="proj-title">Initial AI Implementation Project</h3>
-        </div>
-        <p class="proj-desc">Previous core technical project demonstrating foundational ML skills and model implementation.</p>
-        <div class="proj-tags">
-          <span class="tag">Model Development</span>
-          <span class="tag">Code Implementation</span>
+      <div class="project-container">
+        <div class="project-card">
+          <span class="proj-label">Artifact 01 · Technical Application</span>
+          <h3 class="proj-title">Smart Travel Planner: AI-Driven Itinerary Optimization</h3>
+          <p class="proj-main-desc">A specialized AI agent designed to revolutionize travel planning by utilizing large language models to generate personalized, context-aware itineraries.</p>
+          
+          <div class="proj-info-grid">
+            <div class="info-box">
+              <h4>Context & Goals</h4>
+              <p>The goal was to build a functional AI application that simplifies complex decision-making processes. I focused on prompt engineering and knowledge integration to ensure the planner provides high-utility travel recommendations.</p>
+            </div>
+            <div class="info-box">
+              <h4>Technical Challenges</h4>
+              <p>Ensuring the AI maintains consistency in logistical constraints (time, location, and budget) while providing creative and engaging suggestions. This required refining the model's instructions and feedback loops.</p>
+            </div>
+            <div class="info-box">
+              <h4>Skills Demonstrated</h4>
+              <p>Prompt Engineering, Conversational AI Design, User Experience (UX) Optimization, and GPT Customization.</p>
+            </div>
+            <div class="info-box">
+              <h4>Project Outcome</h4>
+              <p>Delivered a live, interactive "Smart Travel Planner" that demonstrates my ability to take theoretical AI concepts and turn them into user-facing digital products.</p>
+            </div>
+          </div>
+
+          <div class="proj-tags">
+            <span class="tag">Generative AI</span> <span class="tag">Custom GPTs</span> <span class="tag">Applied AI</span>
+          </div>
+          
+          <a href="https://chatgpt.com/g/g-69aca18b889c819196d9e975fc42f72c-smart-travel-planner" target="_blank" class="btn-gold">Launch Live Project</a>
         </div>
       </div>
 
-      <div class="project-card">
-        <div class="proj-header">
-          <div class="proj-num">Artifact 02</div>
-          <h3 class="proj-title">Evolution of AI: A Strategic Timeline Study</h3>
-        </div>
-        <p class="proj-desc">
-          A comprehensive research project exploring the historical milestones of Artificial Intelligence, from early Turing concepts to the rise of Generative AI. This artifact demonstrates a range of skills beyond coding, focusing on industry analysis and strategic foresight.
-        </p>
-        
-        <div class="proj-tags">
-          <span class="tag">AI Ethics & History</span>
-          <span class="tag">Industry Insight</span>
-          <span class="tag">Strategic Planning</span>
-          <span class="tag">Presentation Design</span>
-        </div>
+      <div class="project-container">
+        <div class="project-card">
+          <span class="proj-label">Artifact 02 · Strategic Focus</span>
+          <h3 class="proj-title">The Evolution of AI: A Strategic Timeline Study</h3>
+          <p class="proj-main-desc">A deep-dive research project analyzing the generational shifts in Artificial Intelligence, focusing on the synergy between hardware breakthroughs and algorithmic milestones.</p>
+          
+          <div class="proj-info-grid">
+            <div class="info-box">
+              <h4>Research Context</h4>
+              <p>In contrast to the practical application in Artifact 01, this piece explores the <strong>Historical Context</strong> of AI. It examines why certain "AI Winters" occurred and what drove the modern Generative AI revolution.</p>
+            </div>
+            <div class="info-box">
+              <h4>Strategic Analysis</h4>
+              <p>Identified the three pillars of AI success: Big Data, Compute Power, and Transformers. Analyzed how these forces converged to enable LLMs like GPT-4.</p>
+            </div>
+            <div class="info-box">
+              <h4>Unique Competency</h4>
+              <p>Demonstrates the ability to communicate technical concepts to non-technical stakeholders—a crucial skill for AI leadership and strategic consulting.</p>
+            </div>
+            <div class="info-box">
+              <h4>Future Scope</h4>
+              <p>Provides a framework for predicting the next "S-curve" in AI adoption, particularly in the realms of specialized vertical AI and ethical governance.</p>
+            </div>
+          </div>
 
-        <div class="proj-details-box">
-          <p><strong>Context & Goals:</strong> To analyze the key turning points in AI development, identifying patterns between computational growth and algorithmic breakthroughs to predict future trends.</p>
-          <p><strong>Challenges Faced:</strong> Synthesizing decades of complex technological shifts into a concise narrative while accurately defining the "AI Winters" and their causes.</p>
-          <p><strong>Implemented Solution:</strong> Developed a structured timeline focusing on the synergy of Big Data, Computing Power, and Algorithms as the primary drivers of the modern AI revolution.</p>
+          <div class="proj-tags">
+            <span class="tag">Industry Foresight</span> <span class="tag">History of Tech</span> <span class="tag">Strategic Planning</span>
+          </div>
+          
+          <a href="Discussion_1_3_GroupPPT.pptx" class="btn-gold">Download Strategic Presentation</a>
         </div>
-
-        <a href="Discussion_1_3_GroupPPT.pptx" class="btn-gold" style="font-size: 0.8rem; padding: 8px 16px;">Download Presentation (PPTX)</a>
       </div>
 
       <div class="coming-grid">
-        <div class="coming-card">
-          <div class="coming-num">Artifact 03 / 05</div>
-          <div class="coming-txt">To be added in future workshops</div>
-        </div>
-        <div class="coming-card">
-          <div class="coming-num">Artifact 04 / 05</div>
-          <div class="coming-txt">To be added in future workshops</div>
-        </div>
-        <div class="coming-card">
-          <div class="coming-num">Artifact 05 / 05</div>
-          <div class="coming-txt">To be added in future workshops</div>
-        </div>
+        <div class="coming-card">Artifact 03 / 05<br><small>Coming Soon</small></div>
+        <div class="coming-card">Artifact 04 / 05<br><small>Coming Soon</small></div>
+        <div class="coming-card">Artifact 05 / 05<br><small>Coming Soon</small></div>
       </div>
     </section>
 
     <section id="contact">
-      <div class="contact-wrap">
-        <div class="section-header" style="justify-content:center;">
-          <span class="sec-num">03</span>
-          <h2 class="sec-title">Get In Touch</h2>
-        </div>
-        <p class="contact-p">Currently seeking opportunities for collaboration in AI/ML research and software development.</p>
-        <a href="mailto:zhenyuan.you@myemail.indwes.edu" class="contact-link">zhenyuan.you@myemail.indwes.edu</a>
-        <div style="margin-top:30px;">
-          <a href="#hero" class="btn-gold">Back to Top</a>
-        </div>
+      <div class="project-card" style="text-align: center; border-color: var(--gold);">
+        <span class="proj-label">Get In Touch</span>
+        <h2 class="proj-title">Let's Connect</h2>
+        <p style="margin-bottom: 30px; font-size: 1.2rem;">I am always open to discussing AI ethics, technical implementation, and innovative research opportunities.</p>
+        <a href="mailto:zhenyuan.you@myemail.indwes.edu" class="contact-link" style="color: var(--gold); text-decoration: none; font-size: 1.5rem; font-family: 'Playfair Display', serif;">zhenyuan.you@myemail.indwes.edu</a>
+        <br>
+        <a href="#hero" class="btn-gold" style="margin-top: 40px;">Back to Top</a>
       </div>
     </section>
   </main>
-
 </body>
 </html>
