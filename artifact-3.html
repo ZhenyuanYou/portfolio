@@ -18,106 +18,104 @@
         <a href="artifacts.html">Artifacts</a>
         <a href="artifact-2.html">Timeline Study</a>
         <a href="artifact-3.html" class="active">ML vs DL</a>
+        <a href="artifact-4.html">Artifact 4</a>
         <a href="contact.html">Contact</a>
       </nav>
       <a href="artifacts.html" class="button-outline">Back to artifacts</a>
     </div>
   </header>
 
-  <main class="artifact-hero">
-    <div class="container">
-      <div class="breadcrumbs">Home / Artifacts / Artifact 03</div>
-      <div class="split">
-        <div class="card">
-          <span class="badge">Artifact 03 · Analytical research</span>
-          <h1 style="margin:14px 0 10px; font-family:'Playfair Display', Georgia, serif; font-size:clamp(2.2rem,5vw,4rem);">Machine Learning vs. Deep Learning: A Comparative Study</h1>
-          <p style="font-size:1.05rem; color:var(--muted);">This artifact reframes the original paper as a visual decision guide. The goal is to show not only that I understand ML and DL conceptually, but that I can recommend the right approach based on context.</p>
-          <div class="checklist">
-            <div class="check"><strong>Competency shown</strong><span>Critical evaluation of AI methods and technology selection.</span></div>
-            <div class="check"><strong>Portfolio value</strong><span>Adds analytical depth to complement Artifact 1’s execution and Artifact 2’s historical strategy.</span></div>
-            <div class="check"><strong>Audience adaptation</strong><span>Rewritten to communicate trade-offs clearly for professional and academic audiences.</span></div>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker">Artifact 03 · Analytical comparison</span>
+        <h1>Machine Learning vs. Deep Learning</h1>
+        <p class="lead">This artifact transforms a written comparison into a visual decision aid. It highlights how data structure, task complexity, feature engineering, and compute constraints influence model selection.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Comparison Table</h2>
+            <p>The goal here is not to argue that one approach is always better, but to show how different methods fit different problem environments.</p>
           </div>
         </div>
-        <div class="card">
-          <span class="badge">Decision snapshot</span>
-          <div class="comparison-grid" style="margin-top:16px;">
-            <div class="compare">
-              <h4>Machine Learning</h4>
-              <ul>
-                <li>Best for structured datasets and clearer feature definitions</li>
-                <li>Typically more efficient to train and deploy</li>
-                <li>Strong fit for classification, forecasting, and tabular analysis</li>
-              </ul>
-            </div>
-            <div class="compare">
-              <h4>Deep Learning</h4>
-              <ul>
-                <li>Best for unstructured or high-dimensional data</li>
-                <li>Learns hierarchical features automatically</li>
-                <li>Strong fit for computer vision, speech, and autonomous systems</li>
-              </ul>
-            </div>
-          </div>
-          <div class="decision-strip">
-            <div class="pill"><strong>Data type</strong>Structured → ML</div>
-            <div class="pill"><strong>Complexity</strong>High-dimensional → DL</div>
-            <div class="pill"><strong>Compute</strong>Limited → ML</div>
-            <div class="pill"><strong>Automation</strong>Feature learning → DL</div>
-          </div>
+        <div class="card reveal">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Decision factor</th>
+                <th>Machine Learning</th>
+                <th>Deep Learning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Typical data type</td>
+                <td>Structured data, tabular features, smaller datasets</td>
+                <td>Unstructured data, large-scale images, audio, text</td>
+              </tr>
+              <tr>
+                <td>Feature engineering</td>
+                <td>Usually manual and domain-driven</td>
+                <td>Often learned automatically from raw inputs</td>
+              </tr>
+              <tr>
+                <td>Compute cost</td>
+                <td>Lower cost and faster experimentation</td>
+                <td>Higher cost, more training time, more infrastructure</td>
+              </tr>
+              <tr>
+                <td>Interpretability</td>
+                <td>Often easier to explain to stakeholders</td>
+                <td>Typically harder to interpret directly</td>
+              </tr>
+              <tr>
+                <td>Example fit</td>
+                <td>Churn prediction, spam detection, risk scoring</td>
+                <td>Computer vision, speech recognition, autonomous systems</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+    </section>
 
-      <section class="section" style="padding-top:32px;">
-        <div class="grid-2">
-          <div class="card">
-            <span class="badge">Comparative lens</span>
-            <h3>How the two approaches differ in practice</h3>
-            <div class="comparison-grid">
-              <div class="compare">
-                <h4>ML strengths</h4>
-                <ul>
-                  <li>Transparent modeling for many business cases</li>
-                  <li>Lower compute needs and faster iteration</li>
-                  <li>Useful when domain experts can define strong features</li>
-                </ul>
-              </div>
-              <div class="compare">
-                <h4>DL strengths</h4>
-                <ul>
-                  <li>Handles images, audio, and complex sensor data</li>
-                  <li>Excels when feature engineering is difficult or infeasible</li>
-                  <li>Can achieve superior performance at scale</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <span class="badge">Strategic recommendation</span>
-            <h3>Decision logic</h3>
-            <p>Use traditional machine learning when the problem is structured, the dataset is more manageable, and interpretability or speed matters. Use deep learning when the environment is complex, the signal is embedded in raw data, and automated feature extraction adds significant value.</p>
-            <div class="visual-band">
-              <strong>Representative examples</strong>
-              <p style="margin:8px 0 0;">Spam detection, risk scoring, and forecasting often favor ML. Autonomous driving, image recognition, and speech systems often favor DL.</p>
-            </div>
-          </div>
+    <section class="section">
+      <div class="container grid-3">
+        <div class="card reveal">
+          <span class="badge">Business context</span>
+          <h3>When efficiency matters</h3>
+          <p>Traditional machine learning is often the better choice when the dataset is structured, the business needs quick iteration, and interpretability matters.</p>
         </div>
+        <div class="card reveal delay-1">
+          <span class="badge">Technical context</span>
+          <h3>When complexity matters</h3>
+          <p>Deep learning becomes stronger when the task depends on rich, high-dimensional input spaces that benefit from automatic feature extraction.</p>
+        </div>
+        <div class="card reveal delay-2">
+          <span class="badge">Strategic skill</span>
+          <h3>Choosing the right tool</h3>
+          <p>This artifact demonstrates that technical maturity is not only about knowing models, but about matching them to goals, constraints, and audience needs.</p>
+        </div>
+      </div>
+    </section>
 
-        <div class="card" style="margin-top:24px;">
-          <span class="badge">Reflection</span>
-          <p>For my third artifact, I selected a comparative analysis of machine learning and deep learning approaches. This artifact highlights my ability to critically evaluate AI and ML technologies and determine their suitability for different types of problems. While Artifact 1 focused on hands-on implementation and Artifact 2 emphasized historical and strategic context, this artifact demonstrates analytical and decision-making competency. I revised the work to make the comparison more visual and accessible to a broader audience, using structured blocks instead of relying only on narrative explanation. As a result, the artifact now better communicates how model choice depends on data structure, computational resources, and business goals. Overall, this piece strengthens my portfolio by showing that I can make informed, strategic recommendations about AI architecture in real-world settings.</p>
-          <div class="cta-row">
-            <a class="button-outline" href="2.3 Machine Learning vs. Deep Learning Zhenyuan You.docx">Download original paper</a>
-            <a class="button" href="contact.html">Contact me</a>
-          </div>
+    <section class="section">
+      <div class="container">
+        <div class="note">
+          Portfolio purpose: this artifact adds analytical depth to the portfolio by showing decision-making skill rather than only implementation or historical explanation.
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div>Artifact 03 now reads like a decision artifact instead of an essay.</div>
-      <div><a href="artifacts.html">Artifacts</a> · <a href="contact.html">Contact</a></div>
+      <div>© 2026 Zhenyuan You · Artifact 3</div>
+      <div><a href="artifacts.html">All artifacts</a> · <a href="contact.html">Contact</a></div>
     </div>
   </footer>
 </body>
