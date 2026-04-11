@@ -1,5 +1,115 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><title>Artifact 4</title><link rel="stylesheet" href="styles.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Safe Continuous Learning System</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
 <body>
-<section class="fade-in"><h1>Safe Continuous Learning</h1></section>
-</body></html>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">ZY</span>
+      <span>Zhenyuan You</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="artifacts.html">Artifacts</a>
+      <a href="artifact-2.html">Timeline Study</a>
+      <a href="artifact-3.html">ML vs DL</a>
+      <a href="artifact-4.html" class="active">Artifact 4</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2>Artifact 04 · Safe Continuous Learning System</h2>
+        <p>
+          A system-level design for safely retraining and deploying machine learning models 
+          in production environments, with a focus on reliability, monitoring, and rollback strategies.
+        </p>
+      </div>
+    </div>
+
+    <!-- 简单流程（兼容你现有UI） -->
+    <div class="grid-3">
+
+      <div class="card">
+        <h3>Data & Training</h3>
+        <p>
+          Collect new episodes, filter noisy data, and train candidate models offline 
+          using versioned datasets and reproducible pipelines.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Validation & Safety</h3>
+        <p>
+          Evaluate models on fixed and recent datasets, and test in simulation environments 
+          to ensure stability and safety before deployment.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Deployment & Monitoring</h3>
+        <p>
+          Use canary deployment and real-time monitoring. Automatically rollback models 
+          when performance drops or safety risks are detected.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- 决策逻辑 -->
+    <div class="grid-2" style="margin-top:40px;">
+
+      <div class="card">
+        <h3 style="color:#4ade80;">Promote Model</h3>
+        <ul>
+          <li>Validation ≥ baseline</li>
+          <li>Recent performance improved</li>
+          <li>No safety violations</li>
+          <li>Stable metrics</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3 style="color:#f87171;">Rollback Model</h3>
+        <ul>
+          <li>Success rate &lt; 88%</li>
+          <li>≥3% performance drop</li>
+          <li>Safety interrupt triggered</li>
+          <li>Unexpected behavior</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- checklist -->
+    <div class="card" style="margin-top:40px;">
+      <h3>Engineering Checklist</h3>
+      <p>
+        A full operational checklist for safe retraining and deployment is available below:
+      </p>
+
+      <a href="docs/ops-retrain-deploy-checklist.md" class="button">
+        View Full Checklist →
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+</body>
+</html>
