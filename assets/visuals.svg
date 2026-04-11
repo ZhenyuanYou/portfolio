@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" fill="none">
+  <rect width="1200" height="700" rx="36" fill="#0D1B30"/>
+  <rect x="48" y="56" width="1104" height="588" rx="24" fill="#102544" stroke="#284C7E"/>
+  <circle cx="145" cy="162" r="14" fill="#D8B65D"/>
+  <circle cx="435" cy="162" r="14" fill="#D8B65D"/>
+  <circle cx="725" cy="162" r="14" fill="#D8B65D"/>
+  <circle cx="1015" cy="162" r="14" fill="#D8B65D"/>
+  <path d="M145 162H1015" stroke="url(#g)" stroke-width="6" stroke-linecap="round"/>
+  <text x="110" y="118" fill="#F0D890" font-size="20" font-family="Arial">1950s</text>
+  <text x="395" y="118" fill="#F0D890" font-size="20" font-family="Arial">1980s</text>
+  <text x="685" y="118" fill="#F0D890" font-size="20" font-family="Arial">2010s</text>
+  <text x="975" y="118" fill="#F0D890" font-size="20" font-family="Arial">2020s</text>
+  <rect x="92" y="220" width="180" height="120" rx="18" fill="#0B1628" stroke="#284C7E"/>
+  <rect x="382" y="220" width="180" height="120" rx="18" fill="#0B1628" stroke="#284C7E"/>
+  <rect x="672" y="220" width="180" height="120" rx="18" fill="#0B1628" stroke="#284C7E"/>
+  <rect x="962" y="220" width="180" height="120" rx="18" fill="#0B1628" stroke="#284C7E"/>
+  <text x="116" y="265" fill="#D7E5F4" font-size="24" font-family="Arial">Symbolic AI</text>
+  <text x="410" y="265" fill="#D7E5F4" font-size="24" font-family="Arial">Machine Learning</text>
+  <text x="702" y="265" fill="#D7E5F4" font-size="24" font-family="Arial">Deep Learning</text>
+  <text x="994" y="265" fill="#D7E5F4" font-size="24" font-family="Arial">Generative AI</text>
+  <text x="116" y="298" fill="#92ABC5" font-size="18" font-family="Arial">Rule systems</text>
+  <text x="410" y="298" fill="#92ABC5" font-size="18" font-family="Arial">Data + statistics</text>
+  <text x="702" y="298" fill="#92ABC5" font-size="18" font-family="Arial">Representation learning</text>
+  <text x="994" y="298" fill="#92ABC5" font-size="18" font-family="Arial">Transformers + LLMs</text>
+  <rect x="98" y="402" width="1004" height="168" rx="20" fill="#0B1628" stroke="#284C7E"/>
+  <text x="128" y="454" fill="#D7E5F4" font-size="30" font-family="Arial">Three strategic drivers</text>
+  <rect x="130" y="486" width="250" height="48" rx="24" fill="#162E52"/>
+  <rect x="424" y="486" width="250" height="48" rx="24" fill="#162E52"/>
+  <rect x="718" y="486" width="250" height="48" rx="24" fill="#162E52"/>
+  <text x="198" y="517" fill="#F0D890" font-size="22" font-family="Arial">Big Data</text>
+  <text x="465" y="517" fill="#F0D890" font-size="22" font-family="Arial">Compute Power</text>
+  <text x="786" y="517" fill="#F0D890" font-size="22" font-family="Arial">Transformers</text>
+  <defs>
+    <linearGradient id="g" x1="145" y1="162" x2="1015" y2="162" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D8B65D"/>
+      <stop offset="1" stop-color="#7FB3FF"/>
+    </linearGradient>
+  </defs>
+</svg>

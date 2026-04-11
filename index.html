@@ -1,264 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Zhenyuan You · AI/ML Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-  :root {
-    --navy:    #0a1628;
-    --navy2:   #112240;
-    --navy3:   #1b3358;
-    --gold:    #c9a84c;
-    --gold2:   #e8c97a;
-    --white:   #f0f4f8;
-    --text:    #a8bcd4;
-    --muted:   #607b96;
-    --border:  #1e3a5f;
-    --surface: #0d1e35;
-  }
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--navy); color: var(--text); font-family: 'Inter', sans-serif; font-weight: 300; line-height: 1.7; }
-
-  /* SIDEBAR NAVIGATION */
-  .sidebar {
-    position: fixed; left: 0; top: 0; bottom: 0; width: 80px;
-    background: var(--navy2); border-right: 1px solid var(--border);
-    display: flex; flex-direction: column; align-items: center; padding: 40px 0; z-index: 100;
-  }
-  .nav-dot {
-    width: 10px; height: 10px; border-radius: 50%; background: var(--border);
-    margin: 20px 0; transition: 0.3s; cursor: pointer; position: relative;
-  }
-  .nav-dot:hover, .nav-dot.active { background: var(--gold); box-shadow: 0 0 10px var(--gold); }
-
-  /* MAIN CONTENT LAYOUT */
-  main { margin-left: 80px; padding: 0 8%; }
-  section { min-height: 100vh; padding: 100px 0; display: flex; flex-direction: column; justify-content: center; }
-
-  /* TYPOGRAPHY */
-  .section-header { display: flex; align-items: center; margin-bottom: 60px; }
-  .sec-num { font-family: 'Playfair Display', serif; color: var(--gold); font-size: 1.5rem; margin-right: 15px; }
-  .sec-title { font-family: 'Playfair Display', serif; color: var(--white); font-size: 2.8rem; letter-spacing: 1px; }
-  .sec-line { height: 1px; background: var(--border); flex-grow: 1; margin-left: 30px; }
-
-  /* HERO SECTION */
-  .hero-pre { color: var(--gold); font-family: 'Inter', sans-serif; font-weight: 500; margin-bottom: 15px; display: block; letter-spacing: 2px; }
-  .hero-name { font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 10vw, 6rem); color: var(--white); line-height: 1.1; margin-bottom: 20px; }
-  .hero-sub { font-size: 1.6rem; color: var(--muted); max-width: 700px; margin-bottom: 40px; }
-
-  /* ABOUT SECTION */
-  .about-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 60px; align-items: start; }
-  .about-p { margin-bottom: 25px; font-size: 1.15rem; color: var(--text); }
-  
-  /* PHOTO - NO FILTERS */
-  .profile-frame { position: relative; width: 100%; max-width: 350px; }
-  .profile-img { width: 100%; border-radius: 4px; position: relative; z-index: 2; border: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-  .profile-frame::after {
-    content: ''; position: absolute; top: 20px; left: 20px; width: 100%; height: 100%;
-    border: 2px solid var(--gold); border-radius: 4px; z-index: 1;
-  }
-
-  /* DETAILED PROJECT CARDS */
-  .project-container { margin-bottom: 100px; }
-  .project-card {
-    background: var(--surface); border: 1px solid var(--border); padding: 50px;
-    border-radius: 8px; position: relative; transition: 0.4s ease;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  }
-  .project-card:hover { border-color: var(--gold); }
-  
-  .proj-label { color: var(--gold); font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 15px; display: block; }
-  .proj-title { font-family: 'Playfair Display', serif; color: var(--white); font-size: 2.2rem; margin-bottom: 25px; }
-  .proj-main-desc { font-size: 1.1rem; color: var(--white); margin-bottom: 30px; opacity: 0.9; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-
-  /* GRID FOR INFO BOXES */
-  .proj-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
-  .info-box h4 { color: var(--gold); font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 12px; border-bottom: 1px solid rgba(201,168,76,0.2); display: inline-block; padding-bottom: 4px; }
-  .info-box p { font-size: 0.95rem; line-height: 1.6; color: var(--text); }
-
-  .proj-tags { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 40px; }
-  .tag { font-size: 0.8rem; color: var(--gold2); border: 1px solid var(--gold); padding: 6px 16px; border-radius: 4px; background: rgba(201,168,76,0.05); transition: 0.3s; }
-  .tag:hover { background: rgba(201,168,76,0.15); }
-
-  /* BUTTONS */
-  .btn-gold {
-    display: inline-block; padding: 14px 32px; border: 1px solid var(--gold);
-    color: var(--gold); text-decoration: none; border-radius: 4px; font-weight: 500;
-    transition: 0.3s; background: transparent; cursor: pointer; font-size: 0.95rem; margin-top: 30px;
-    text-transform: uppercase; letter-spacing: 1px;
-  }
-  .btn-gold:hover { background: var(--gold); color: var(--navy); }
-
-  /* PLACEHOLDERS */
-  .coming-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
-  .coming-card { border: 1px dashed var(--border); padding: 40px; border-radius: 8px; text-align: center; color: var(--muted); background: rgba(17,34,64,0.5); }
-
-  @media (max-width: 992px) {
-    .proj-info-grid { grid-template-columns: 1fr; }
-    .about-grid { grid-template-columns: 1fr; }
-    .sidebar { display: none; }
-    main { margin-left: 0; padding: 0 5%; }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zhenyuan You · AI/ML Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-  <nav class="sidebar">
-    <a href="#hero" class="nav-dot active"></a>
-    <a href="#about" class="nav-dot"></a>
-    <a href="#artifacts" class="nav-dot"></a>
-    <a href="#contact" class="nav-dot"></a>
-  </nav>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ZY</span>
+        <span>Zhenyuan You</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="artifacts.html">Artifacts</a>
+        <a href="artifact-2.html">Timeline Study</a>
+        <a href="artifact-3.html">ML vs DL</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artifacts.html" class="button-outline">View Portfolio</a>
+    </div>
+  </header>
 
   <main>
-    <section id="hero">
-      <span class="hero-pre">Portfolio of</span>
-      <h1 class="hero-name">Zhenyuan You</h1>
-      <p class="hero-sub">AI & Machine Learning Specialist | Student at IWU | Developing Intelligent Solutions Through Technical Implementation and Strategic Research.</p>
-      <a href="#artifacts" class="btn-gold">Explore Artifacts</a>
-    </section>
-
-    <section id="about">
-      <div class="section-header">
-        <span class="sec-num">01</span><h2 class="sec-title">Personal Profile</h2><div class="sec-line"></div>
-      </div>
-      <div class="about-grid">
-        <div class="about-info">
-          <p class="about-p">I am a scholar and developer focused on <strong>AI/ML competencies</strong>. My academic journey at IWU has equipped me with the skills to critically evaluate AI models and customize technical artifacts for diverse professional audiences.</p>
-          <p class="about-p">I believe that the most impactful AI solutions are built upon a deep understanding of historical milestones and ethical frameworks. My work ranges from direct code implementation to high-level strategic research.</p>
-          <div class="proj-tags">
-            <span class="tag">Machine Learning</span> <span class="tag">Neural Networks</span> <span class="tag">Data Strategy</span> <span class="tag">AI Ethics</span>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="kicker">AI portfolio · Visual upgrade</span>
+          <h1>AI &amp; Machine Learning Portfolio built to show, not just tell.</h1>
+          <p class="lead">I am an AI/ML-focused student and builder who combines technical implementation, strategic analysis, and audience-centered communication. This portfolio presents artifacts as visual products rather than text-heavy submissions.</p>
+          <div class="hero-actions">
+            <a class="button" href="artifacts.html">Explore all 3 artifacts</a>
+            <a class="button-outline" href="contact.html">Contact</a>
           </div>
         </div>
-        <div class="profile-frame">
-          <img src="photo.jpg" alt="Zhenyuan You" class="profile-img"/>
-        </div>
-      </div>
-    </section>
-
-    <section id="artifacts">
-      <div class="section-header">
-        <span class="sec-num">02</span><h2 class="sec-title">Professional Artifacts</h2><div class="sec-line"></div>
-      </div>
-
-      <div class="project-container">
-        <div class="project-card">
-          <span class="proj-label">Artifact 01 · Technical Application</span>
-          <h3 class="proj-title">Smart Travel Planner: AI-Driven Itinerary Optimization</h3>
-          <p class="proj-main-desc">A specialized AI agent designed to revolutionize travel planning by utilizing large language models to generate personalized, context-aware itineraries.</p>
-          
-          <div class="proj-info-grid">
-            <div class="info-box">
-              <h4>Context & Goals</h4>
-              <p>The goal was to build a functional AI application that simplifies complex decision-making processes. I focused on prompt engineering and knowledge integration to ensure the planner provides high-utility travel recommendations.</p>
-            </div>
-            <div class="info-box">
-              <h4>Technical Challenges</h4>
-              <p>Ensuring the AI maintains consistency in logistical constraints (time, location, and budget) while providing creative and engaging suggestions. This required refining the model's instructions and feedback loops.</p>
-            </div>
-            <div class="info-box">
-              <h4>Skills Demonstrated</h4>
-              <p>Prompt Engineering, Conversational AI Design, User Experience (UX) Optimization, and GPT Customization.</p>
-            </div>
-            <div class="info-box">
-              <h4>Project Outcome</h4>
-              <p>Delivered a live, interactive "Smart Travel Planner" that demonstrates my ability to take theoretical AI concepts and turn them into user-facing digital products.</p>
-            </div>
+        <aside class="hero-panel">
+          <div class="eyebrow">Portfolio snapshot</div>
+          <h3 style="margin:10px 0 6px; font-size:1.5rem;">What this site communicates in 10 seconds</h3>
+          <p style="margin:0; color:var(--muted);">Clear positioning, visible project outcomes, and visual storytelling across application, strategy, and comparative analysis.</p>
+          <div class="hero-stats">
+            <div class="stat"><strong>3</strong><span>Core artifacts</span></div>
+            <div class="stat"><strong>3</strong><span>AI/ML competency areas</span></div>
+            <div class="stat"><strong>1</strong><span>Professional narrative</span></div>
           </div>
-
-          <div class="proj-tags">
-            <span class="tag">Generative AI</span> <span class="tag">Custom GPTs</span> <span class="tag">Applied AI</span>
-          </div>
-          
-          <a href="https://chatgpt.com/g/g-69aca18b889c819196d9e975fc42f72c-smart-travel-planner" target="_blank" class="btn-gold">Launch Live Project</a>
-        </div>
-      </div>
-
-      <div class="project-container">
-        <div class="project-card">
-          <span class="proj-label">Artifact 02 · Strategic Focus</span>
-          <h3 class="proj-title">The Evolution of AI: A Strategic Timeline Study</h3>
-          <p class="proj-main-desc">A deep-dive research project analyzing the generational shifts in Artificial Intelligence, focusing on the synergy between hardware breakthroughs and algorithmic milestones.</p>
-          
-          <div class="proj-info-grid">
-            <div class="info-box">
-              <h4>Research Context</h4>
-              <p>In contrast to the practical application in Artifact 01, this piece explores the <strong>Historical Context</strong> of AI. It examines why certain "AI Winters" occurred and what drove the modern Generative AI revolution.</p>
-            </div>
-            <div class="info-box">
-              <h4>Strategic Analysis</h4>
-              <p>Identified the three pillars of AI success: Big Data, Compute Power, and Transformers. Analyzed how these forces converged to enable LLMs like GPT-4.</p>
-            </div>
-            <div class="info-box">
-              <h4>Unique Competency</h4>
-              <p>Demonstrates the ability to communicate technical concepts to non-technical stakeholders—a crucial skill for AI leadership and strategic consulting.</p>
-            </div>
-            <div class="info-box">
-              <h4>Future Scope</h4>
-              <p>Provides a framework for predicting the next "S-curve" in AI adoption, particularly in the realms of specialized vertical AI and ethical governance.</p>
-            </div>
-          </div>
-
-          <div class="proj-tags">
-            <span class="tag">Industry Foresight</span> <span class="tag">History of Tech</span> <span class="tag">Strategic Planning</span>
-          </div>
-          
-          <a href="Discussion_1_3_GroupPPT.pptx" class="btn-gold">Download Strategic Presentation</a>
-        </div>
-      </div>
-
-      <div class="project-container">
-        <div class="project-card">
-          <span class="proj-label">Artifact 03 · Analytical Research</span>
-          <h3 class="proj-title">Machine Learning vs. Deep Learning: A Comparative Study</h3>
-          <p class="proj-main-desc">An architectural analysis of AI methodologies, evaluating the trade-offs between feature engineering in ML and neural network autonomy in DL across real-world industries.</p>
-          
-          <div class="proj-info-grid">
-            <div class="info-box">
-              <h4>Core Objective</h4>
-              <p>The goal was to critically evaluate when to use traditional ML versus Deep Learning. I analyzed how human-selected features in ML provide efficiency for structured tasks like spam detection.</p>
-            </div>
-            <div class="info-box">
-              <h4>Technical Insights</h4>
-              <p>I explored how Convolutional Neural Networks (CNNs) excel in complex environments, such as autonomous driving, by automatically learning hierarchical features from visual data.</p>
-            </div>
-            <div class="info-box">
-              <h4>Strategic Selection</h4>
-              <p>This study demonstrates my ability to select the most effective AI approach based on data complexity, computational resources, and task structure.</p>
-            </div>
-            <div class="info-box">
-              <h4>Professional Competency</h4>
-              <p>Showcases expertise in high-level AI consulting—bridging the gap between raw data requirements and the practical implementation of logistic regression or deep neural networks.</p>
-            </div>
-          </div>
-
-          <div class="proj-tags">
-            <span class="tag">Comparative Analysis</span> <span class="tag">CNNs</span> <span class="tag">Feature Engineering</span> <span class="tag">Technical Decision Making</span>
-          </div>
-          
-          <a href="2.3 Machine Learning vs. Deep Learning Zhenyuan You.docx" class="btn-gold">Read Full Analysis</a>
-        </div>
-      </div>
-
-      <div class="coming-grid">
-        <div class="coming-card">Artifact 04 / 05<br><small>Coming Soon</small></div>
-        <div class="coming-card">Artifact 05 / 05<br><small>Coming Soon</small></div>
+        </aside>
       </div>
     </section>
 
-    <section id="contact">
-      <div class="project-card" style="text-align: center; border-color: var(--gold);">
-        <span class="proj-label">Get In Touch</span>
-        <h2 class="proj-title">Let's Connect</h2>
-        <p style="margin-bottom: 30px; font-size: 1.2rem;">I am always open to discussing AI ethics, technical implementation, and innovative research opportunities.</p>
-        <a href="mailto:zhenyuan.you@myemail.indwes.edu" class="contact-link" style="color: var(--gold); text-decoration: none; font-size: 1.5rem; font-family: 'Playfair Display', serif;">zhenyuan.you@myemail.indwes.edu</a>
-        <br>
-        <a href="#hero" class="btn-gold" style="margin-top: 40px;">Back to Top</a>
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Professional Profile</h2>
+            <p>This landing page is designed to communicate identity, capability, and direction immediately. It supports leadership- and consulting-oriented positioning while still showing technical range.</p>
+          </div>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <span class="badge">Positioning</span>
+            <h3>AI/ML specialist with technical and strategic range</h3>
+            <p>I focus on applied AI, model selection, and communicating technical value to different audiences. My portfolio emphasizes not only building systems, but also explaining when and why particular AI approaches are the right fit.</p>
+            <div class="tags">
+              <span class="tag">Applied AI</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">AI Strategy</span>
+              <span class="tag">Audience Communication</span>
+            </div>
+          </div>
+          <div class="card">
+            <span class="badge">Competency mix</span>
+            <div class="visual-band">
+              <div class="mini-metrics">
+                <div><strong>Artifact 1</strong><span>Hands-on product execution</span></div>
+                <div><strong>Artifact 2</strong><span>Industry history &amp; strategic foresight</span></div>
+                <div><strong>Artifact 3</strong><span>Analytical model comparison</span></div>
+              </div>
+            </div>
+            <p>This structure makes the portfolio easier for an instructor, recruiter, or manager to scan. Each artifact now has a distinct role and visible format.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Featured Artifacts</h2>
+            <p>Each project is framed around a separate competency so the portfolio shows variety rather than repetition.</p>
+          </div>
+          <a href="artifacts.html" class="button-outline">See all artifact pages</a>
+        </div>
+        <div class="grid-3">
+          <article class="card artifact-card">
+            <span class="badge">Artifact 01 · Application</span>
+            <h3>Smart Travel Planner</h3>
+            <p>A user-facing AI planning assistant that turns prompt engineering and constraint handling into a practical product experience.</p>
+            <div class="visual-band">
+              <strong>Key outcome</strong>
+              <p style="margin:8px 0 0;">Demonstrates implementation, usability thinking, and applied generative AI.</p>
+            </div>
+            <a class="button-outline" href="artifacts.html#artifact1">Open Artifact 1</a>
+          </article>
+          <article class="card artifact-card">
+            <span class="badge">Artifact 02 · Strategic research</span>
+            <h3>The Evolution of AI</h3>
+            <p>A timeline-based artifact showing how AI progressed from symbolic systems to machine learning, deep learning, and generative AI.</p>
+            <div class="visual-band">
+              <strong>Now visual-first</strong>
+              <p style="margin:8px 0 0;">The timeline is visible on-page instead of hidden behind a download button.</p>
+            </div>
+            <a class="button-outline" href="artifact-2.html">View timeline artifact</a>
+          </article>
+          <article class="card artifact-card">
+            <span class="badge">Artifact 03 · Analytical research</span>
+            <h3>Machine Learning vs. Deep Learning</h3>
+            <p>A comparative study framed as a decision aid, showing how model choice changes with data type, scale, and business context.</p>
+            <div class="visual-band">
+              <strong>Now easier to scan</strong>
+              <p style="margin:8px 0 0;">The core comparison is shown through structured visual blocks and decision criteria.</p>
+            </div>
+            <a class="button-outline" href="artifact-3.html">View comparison artifact</a>
+          </article>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© 2026 Zhenyuan You · AI/ML Portfolio</div>
+      <div><a href="artifacts.html">Artifacts</a> · <a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
 </body>
 </html>
