@@ -1,142 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zhenyuan You · AI/ML Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Zhenyuan You · AI/ML Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --navy:#0a1628;
+  --navy2:#112240;
+  --gold:#c9a84c;
+  --white:#f0f4f8;
+  --text:#a8bcd4;
+  --border:#1e3a5f;
+}
+
+body {
+  margin:0;
+  background:var(--navy);
+  color:var(--text);
+  font-family:'Inter', sans-serif;
+}
+
+main {
+  padding:0 8%;
+}
+
+/* HERO */
+#hero {
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-avatar {
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid var(--gold);
+  margin-bottom:25px;
+  box-shadow:0 0 20px rgba(201,168,76,0.4);
+}
+
+.hero-avatar img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-name {
+  font-family:'Playfair Display', serif;
+  font-size:4rem;
+  color:var(--white);
+  margin:0;
+}
+
+.hero-sub {
+  font-size:1.3rem;
+  margin-top:15px;
+  max-width:600px;
+}
+
+.btn {
+  margin-top:30px;
+  display:inline-block;
+  padding:12px 25px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-decoration:none;
+}
+
+.section {
+  padding:80px 0;
+}
+
+.section h2 {
+  color:var(--white);
+  margin-bottom:30px;
+}
+
+/* ARTIFACT CARDS */
+.card {
+  border:1px solid var(--border);
+  padding:30px;
+  margin-bottom:40px;
+  border-radius:8px;
+}
+
+.card h3 {
+  color:var(--white);
+}
+
+.card a {
+  display:inline-block;
+  margin-top:15px;
+  color:var(--gold);
+}
+
+/* GRID */
+.grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+
+@media(max-width:768px){
+  .grid {grid-template-columns:1fr;}
+}
+</style>
 </head>
+
 <body>
-  <header class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">ZY</span>
-        <span>Zhenyuan You</span>
-      </a>
-      <nav class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="artifacts.html">Artifacts</a>
-        <a href="artifact-2.html">Timeline Study</a>
-        <a href="artifact-3.html">ML vs DL</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <a href="artifacts.html" class="button-outline">View Portfolio</a>
+
+<main>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-avatar">
+    <img src="photo.jpg" alt="Zhenyuan You">
+  </div>
+
+  <h1 class="hero-name">Zhenyuan You</h1>
+  <p class="hero-sub">
+    AI & Machine Learning Specialist · Building intelligent systems and strategic AI insights.
+  </p>
+
+  <a href="artifacts.html" class="btn">View Portfolio</a>
+</section>
+
+<!-- ABOUT -->
+<section class="section">
+  <h2>About Me</h2>
+  <p>
+    I focus on artificial intelligence, machine learning, and data strategy. My work bridges technical implementation and strategic thinking, enabling me to design solutions and communicate their value effectively.
+  </p>
+</section>
+
+<!-- ARTIFACT PREVIEW -->
+<section class="section">
+  <h2>Featured Work</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Artifact 1 – Smart Travel Planner</h3>
+      <p>AI-driven itinerary system using LLMs.</p>
+      <a href="artifacts.html">View</a>
     </div>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="kicker">AI portfolio · Visual upgrade</span>
-          <h1>AI &amp; Machine Learning Portfolio built to show, not just tell.</h1>
-          <p class="lead">I am an AI/ML-focused student and builder who combines technical implementation, strategic analysis, and audience-centered communication. This portfolio presents artifacts as visual products rather than text-heavy submissions.</p>
-          <div class="hero-actions">
-            <a class="button" href="artifacts.html">Explore all 3 artifacts</a>
-            <a class="button-outline" href="contact.html">Contact</a>
-          </div>
-        </div>
-        <aside class="hero-panel">
-          <div class="eyebrow">Portfolio snapshot</div>
-          <h3 style="margin:10px 0 6px; font-size:1.5rem;">What this site communicates in 10 seconds</h3>
-          <p style="margin:0; color:var(--muted);">Clear positioning, visible project outcomes, and visual storytelling across application, strategy, and comparative analysis.</p>
-          <div class="hero-stats">
-            <div class="stat"><strong>3</strong><span>Core artifacts</span></div>
-            <div class="stat"><strong>3</strong><span>AI/ML competency areas</span></div>
-            <div class="stat"><strong>1</strong><span>Professional narrative</span></div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Professional Profile</h2>
-            <p>This landing page is designed to communicate identity, capability, and direction immediately. It supports leadership- and consulting-oriented positioning while still showing technical range.</p>
-          </div>
-        </div>
-        <div class="grid-2">
-          <div class="card">
-            <span class="badge">Positioning</span>
-            <h3>AI/ML specialist with technical and strategic range</h3>
-            <p>I focus on applied AI, model selection, and communicating technical value to different audiences. My portfolio emphasizes not only building systems, but also explaining when and why particular AI approaches are the right fit.</p>
-            <div class="tags">
-              <span class="tag">Applied AI</span>
-              <span class="tag">Machine Learning</span>
-              <span class="tag">AI Strategy</span>
-              <span class="tag">Audience Communication</span>
-            </div>
-          </div>
-          <div class="card">
-            <span class="badge">Competency mix</span>
-            <div class="visual-band">
-              <div class="mini-metrics">
-                <div><strong>Artifact 1</strong><span>Hands-on product execution</span></div>
-                <div><strong>Artifact 2</strong><span>Industry history &amp; strategic foresight</span></div>
-                <div><strong>Artifact 3</strong><span>Analytical model comparison</span></div>
-              </div>
-            </div>
-            <p>This structure makes the portfolio easier for an instructor, recruiter, or manager to scan. Each artifact now has a distinct role and visible format.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <h2>Featured Artifacts</h2>
-            <p>Each project is framed around a separate competency so the portfolio shows variety rather than repetition.</p>
-          </div>
-          <a href="artifacts.html" class="button-outline">See all artifact pages</a>
-        </div>
-        <div class="grid-3">
-          <article class="card artifact-card">
-            <span class="badge">Artifact 01 · Application</span>
-            <h3>Smart Travel Planner</h3>
-            <p>A user-facing AI planning assistant that turns prompt engineering and constraint handling into a practical product experience.</p>
-            <div class="visual-band">
-              <strong>Key outcome</strong>
-              <p style="margin:8px 0 0;">Demonstrates implementation, usability thinking, and applied generative AI.</p>
-            </div>
-            <a class="button-outline" href="artifacts.html#artifact1">Open Artifact 1</a>
-          </article>
-          <article class="card artifact-card">
-            <span class="badge">Artifact 02 · Strategic research</span>
-            <h3>The Evolution of AI</h3>
-            <p>A timeline-based artifact showing how AI progressed from symbolic systems to machine learning, deep learning, and generative AI.</p>
-            <div class="visual-band">
-              <strong>Now visual-first</strong>
-              <p style="margin:8px 0 0;">The timeline is visible on-page instead of hidden behind a download button.</p>
-            </div>
-            <a class="button-outline" href="artifact-2.html">View timeline artifact</a>
-          </article>
-          <article class="card artifact-card">
-            <span class="badge">Artifact 03 · Analytical research</span>
-            <h3>Machine Learning vs. Deep Learning</h3>
-            <p>A comparative study framed as a decision aid, showing how model choice changes with data type, scale, and business context.</p>
-            <div class="visual-band">
-              <strong>Now easier to scan</strong>
-              <p style="margin:8px 0 0;">The core comparison is shown through structured visual blocks and decision criteria.</p>
-            </div>
-            <a class="button-outline" href="artifact-3.html">View comparison artifact</a>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div>© 2026 Zhenyuan You · AI/ML Portfolio</div>
-      <div><a href="artifacts.html">Artifacts</a> · <a href="contact.html">Contact</a></div>
+    <div class="card">
+      <h3>Artifact 2 – AI Timeline</h3>
+      <p>Visual evolution of artificial intelligence.</p>
+      <a href="artifact-2.html">View</a>
     </div>
-  </footer>
+
+    <div class="card">
+      <h3>Artifact 3 – ML vs DL</h3>
+      <p>Comparative analysis of AI architectures.</p>
+      <a href="artifact-3.html">View</a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
 </body>
 </html>
