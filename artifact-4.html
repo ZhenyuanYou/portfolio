@@ -1,4 +1,146 @@
-<html><body>
-<h2>Artifact 4: System Design</h2>
-<p>This project presents a safe continuous learning system with monitoring, validation, and deployment controls.</p>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifact 4 · Safe Continuous Learning System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">ZY</span><span>Zhenyuan You</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artifacts.html">Artifacts</a>
+        <a href="artifact-2.html">Timeline Study</a>
+        <a href="artifact-3.html">ML vs DL</a>
+        <a href="artifact-4.html" class="active">Artifact 4</a>
+        <a href="artifact-5.html">Artifact 5</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="docs/ops-retrain-deploy-checklist.md" class="button-outline">Open checklist</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker">Artifact 04 · MLOps design</span>
+        <h1>Safe Continuous Learning System</h1>
+        <p class="lead">A production-level design for safely retraining, validating, deploying, monitoring, and rolling back machine learning models in dynamic environments. This artifact demonstrates system thinking rather than model training alone.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>End-to-End Pipeline</h2>
+            <p>The design below emphasizes staged updates, safety review, and clear rollback conditions instead of risky unreviewed online learning.</p>
+          </div>
+        </div>
+        <div class="pipeline">
+          <div class="step reveal"><span>Step 1</span><strong>Collect Data</strong>Log new episodes and outcomes.</div>
+          <div class="step reveal delay-1"><span>Step 2</span><strong>Filter &amp; Clean</strong>Remove corrupt, duplicated, or unreliable samples.</div>
+          <div class="step reveal delay-2"><span>Step 3</span><strong>Train Offline</strong>Build a versioned candidate model.</div>
+          <div class="step reveal delay-3"><span>Step 4</span><strong>Validate</strong>Test on fixed and recent datasets plus simulation.</div>
+          <div class="step reveal"><span>Step 5</span><strong>Canary Deploy</strong>Roll out to a small monitored subset.</div>
+          <div class="step reveal delay-1"><span>Step 6</span><strong>Monitor &amp; Rollback</strong>Revert automatically if risk appears.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Key Evaluation Metrics</h2>
+            <p>The promotion decision depends on more than accuracy. Safety, stability, and recent-environment performance matter as much as general validation.</p>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric reveal"><strong>90%+</strong><span>Target success rate</span></div>
+          <div class="metric reveal delay-1"><strong>&lt; 2.5%</strong><span>False-pick tolerance</span></div>
+          <div class="metric reveal delay-2"><strong>0</strong><span>Critical safety violations</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Deployment Decision Logic</h2>
+            <p>This artifact is designed to be easy to scan: one side shows when the candidate model can move forward; the other shows when it must be rolled back.</p>
+          </div>
+        </div>
+        <div class="decision">
+          <div class="card reveal">
+            <span class="badge">Promote model</span>
+            <h3 class="good">Conditions to move forward</h3>
+            <ul>
+              <li>Validation performance is at or above baseline.</li>
+              <li>Recent data performance improves on the current environment.</li>
+              <li>No critical safety violations appear in simulation or canary.</li>
+              <li>Metrics remain stable enough for staged expansion.</li>
+            </ul>
+          </div>
+          <div class="card reveal delay-1">
+            <span class="badge">Rollback model</span>
+            <h3 class="bad">Conditions to revert immediately</h3>
+            <ul>
+              <li>Success rate drops below the defined floor.</li>
+              <li>Relative regression exceeds the allowed threshold.</li>
+              <li>Safety interrupt or physical safety trip occurs.</li>
+              <li>Unexpected behavior or reward-hacking pattern appears.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container summary-grid">
+        <div class="card reveal">
+          <span class="badge">Simulation timeline</span>
+          <h3>Example cycle</h3>
+          <div class="timeline" style="margin-top:18px">
+            <div class="timeline-item"><strong>Day 0</strong> Drift is detected and retraining is triggered.</div>
+            <div class="timeline-item"><strong>Day 1</strong> A new data snapshot is created and recent holdout data is reserved.</div>
+            <div class="timeline-item"><strong>Day 2</strong> Candidate model training and offline evaluation are completed.</div>
+            <div class="timeline-item"><strong>Day 3</strong> Canary rollout begins with close monitoring.</div>
+            <div class="timeline-item"><strong>Day 4</strong> If a safety event occurs, rollback happens immediately.</div>
+            <div class="timeline-item"><strong>Day 5</strong> Root cause is isolated, fixed, and the cycle restarts safely.</div>
+          </div>
+        </div>
+
+        <div class="card reveal delay-1">
+          <span class="badge">Why this artifact matters</span>
+          <h3>Production AI is more than model performance</h3>
+          <p>This artifact strengthens the portfolio by showing MLOps and AI safety thinking. It demonstrates that I understand how machine learning systems behave in production, how to manage risk, and how to build processes that support reliability over time.</p>
+          <div class="tags">
+            <span class="tag">MLOps</span>
+            <span class="tag">Deployment Strategy</span>
+            <span class="tag">Rollback Design</span>
+            <span class="tag">AI Safety</span>
+          </div>
+          <div class="hero-actions">
+            <a href="docs/ops-retrain-deploy-checklist.md" class="button">View full engineering checklist</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© 2026 Zhenyuan You · Artifact 4</div>
+      <div><a href="artifacts.html">All artifacts</a> · <a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+</body>
+</html>

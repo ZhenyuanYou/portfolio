@@ -1,11 +1,138 @@
-<html><body>
-<h2>Artifact 3: Model Comparison</h2>
-<p>This artifact compares machine learning models and evaluates their performance.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifact 3 · Machine Learning vs. Deep Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">ZY</span><span>Zhenyuan You</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artifacts.html">Artifacts</a>
+        <a href="artifact-2.html">Timeline Study</a>
+        <a href="artifact-3.html" class="active">ML vs DL</a>
+        <a href="artifact-4.html">Artifact 4</a>
+        <a href="artifact-5.html">Artifact 5</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artifacts.html" class="button-outline">Back to artifacts</a>
+    </div>
+  </header>
 
-<h3>Sources</h3>
-<p>
-Pedregosa, F., et al. (2011). Scikit-learn: Machine learning in Python.<br>
-Kaggle. (2024). Public machine learning datasets.<br>
-Powers, D. M. W. (2011). Evaluation metrics in machine learning.
-</p>
-</body></html>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker">Artifact 03 · Analytical comparison</span>
+        <h1>Machine Learning vs. Deep Learning</h1>
+        <p class="lead">This artifact transforms a written comparison into a visual decision aid. It highlights how data structure, task complexity, feature engineering, and compute constraints influence model selection.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Comparison Table</h2>
+            <p>The goal here is not to argue that one approach is always better, but to show how different methods fit different problem environments.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Decision factor</th>
+                <th>Machine Learning</th>
+                <th>Deep Learning</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Typical data type</td>
+                <td>Structured data, tabular features, smaller datasets</td>
+                <td>Unstructured data, large-scale images, audio, text</td>
+              </tr>
+              <tr>
+                <td>Feature engineering</td>
+                <td>Usually manual and domain-driven</td>
+                <td>Often learned automatically from raw inputs</td>
+              </tr>
+              <tr>
+                <td>Compute cost</td>
+                <td>Lower cost and faster experimentation</td>
+                <td>Higher cost, more training time, more infrastructure</td>
+              </tr>
+              <tr>
+                <td>Interpretability</td>
+                <td>Often easier to explain to stakeholders</td>
+                <td>Typically harder to interpret directly</td>
+              </tr>
+              <tr>
+                <td>Example fit</td>
+                <td>Churn prediction, spam detection, risk scoring</td>
+                <td>Computer vision, speech recognition, autonomous systems</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-3">
+        <div class="card reveal">
+          <span class="badge">Business context</span>
+          <h3>When efficiency matters</h3>
+          <p>Traditional machine learning is often the better choice when the dataset is structured, the business needs quick iteration, and interpretability matters.</p>
+        </div>
+        <div class="card reveal delay-1">
+          <span class="badge">Technical context</span>
+          <h3>When complexity matters</h3>
+          <p>Deep learning becomes stronger when the task depends on rich, high-dimensional input spaces that benefit from automatic feature extraction.</p>
+        </div>
+        <div class="card reveal delay-2">
+          <span class="badge">Strategic skill</span>
+          <h3>Choosing the right tool</h3>
+          <p>This artifact demonstrates that technical maturity is not only about knowing models, but about matching them to goals, constraints, and audience needs.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="note">
+          Portfolio purpose: this artifact adds analytical depth to the portfolio by showing decision-making skill rather than only implementation or historical explanation.
+        </div>
+      </div>
+    </section>
+
+    <section class="section sources-section">
+      <div class="container">
+        <div class="card reveal">
+          <span class="badge">Sources</span>
+          <h3>Research foundation</h3>
+          <p>These sources support the model comparison, evaluation terminology, and discussion of machine learning and deep learning tradeoffs.</p>
+          <ul class="source-list">
+            <li>Goodfellow, I., Bengio, Y., &amp; Courville, A. (2016). <em>Deep learning</em>. MIT Press.</li>
+            <li>Pedregosa, F., et al. (2011). Scikit-learn: Machine learning in Python. <em>Journal of Machine Learning Research, 12</em>, 2825–2830.</li>
+            <li>Powers, D. M. W. (2011). Evaluation: From precision, recall and F-measure to ROC, informedness, markedness and correlation. <em>Journal of Machine Learning Technologies, 2</em>(1), 37–63.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© 2026 Zhenyuan You · Artifact 3</div>
+      <div><a href="artifacts.html">All artifacts</a> · <a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+</body>
+</html>

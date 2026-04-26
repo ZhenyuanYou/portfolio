@@ -1,11 +1,134 @@
-<html><body>
-<h2>Artifact 5: AI Ethics Analysis</h2>
-<p>This artifact analyzes real-world AI system failures and highlights ethical considerations such as system autonomy, governance, and reliability.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artifact 5 · AI Ethics Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">ZY</span><span>Zhenyuan You</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="artifacts.html">Artifacts</a>
+        <a href="artifact-2.html">Timeline Study</a>
+        <a href="artifact-3.html">ML vs DL</a>
+        <a href="artifact-4.html">Artifact 4</a>
+        <a href="artifact-5.html" class="active">Artifact 5</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="artifacts.html" class="button-outline">Back to artifacts</a>
+    </div>
+  </header>
 
-<h3>Sources</h3>
-<p>
-National Institute of Standards and Technology. (2023). AI Risk Management Framework.<br>
-Amodei, D., et al. (2016). Concrete problems in AI safety.<br>
-European Commission. (2024). Artificial Intelligence Act.
-</p>
-</body></html>
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="kicker">Artifact 05 · AI ethics and governance</span>
+        <h1>AI Incident Ethics Analysis</h1>
+        <p class="lead">A critical-thinking artifact focused on ethical issues that appear when AI systems are used in real-world production environments. This page translates an incident analysis into practical lessons for responsible AI/ML leadership.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container summary-grid">
+        <div class="card reveal">
+          <span class="badge">What this artifact demonstrates</span>
+          <h3>Responsible AI thinking beyond model accuracy</h3>
+          <p>This artifact examines how AI-related failures can emerge from system permissions, automation design, human oversight gaps, and unclear accountability. It shows that responsible AI development requires both technical skill and ethical judgment.</p>
+        </div>
+        <div class="card reveal delay-1">
+          <span class="badge">Audience adaptation</span>
+          <h3>Designed for technical and non-technical readers</h3>
+          <p>The analysis is organized around clear ethical themes so that managers, instructors, and engineering reviewers can quickly understand the risks and the recommended safeguards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Incident Summary</h2>
+            <p>The selected case focuses on AI-assisted automation in a production environment, where automated actions created risk beyond the immediate task being performed.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <p>A recent AI-assisted system failure showed how automation can create unintended consequences when an AI tool is allowed to make high-impact operational decisions. The case is important because it highlights a central challenge in AI/ML leadership: systems may optimize for a narrow task while missing broader reliability, safety, and business-context constraints.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid-3">
+        <div class="card reveal">
+          <span class="badge">Ethical issue 1</span>
+          <h3>System autonomy and permissions</h3>
+          <p>AI tools can create significant risk when they are granted authority to perform destructive or high-impact actions without sufficient permission boundaries. This issue matters because technical automation should not exceed the level of trust and review appropriate for the environment.</p>
+          <div class="visual-band"><strong>Mitigation</strong><p style="margin:8px 0 0;">Use role-based access control, approval gates, and restricted execution scopes for production operations.</p></div>
+        </div>
+        <div class="card reveal delay-1">
+          <span class="badge">Ethical issue 2</span>
+          <h3>Human oversight and accountability</h3>
+          <p>When AI agents take action automatically, it can become unclear who is responsible for reviewing decisions and preventing harm. Effective AI governance requires clear ownership, human-in-the-loop checkpoints, and escalation paths.</p>
+          <div class="visual-band"><strong>Mitigation</strong><p style="margin:8px 0 0;">Require human validation for critical actions and maintain clear accountability for system behavior.</p></div>
+        </div>
+        <div class="card reveal delay-2">
+          <span class="badge">Ethical issue 3</span>
+          <h3>Cascading failures</h3>
+          <p>AI failures rarely remain isolated in modern interconnected systems. A narrow automated action can affect downstream services, users, and teams if safeguards and isolation boundaries are not designed carefully.</p>
+          <div class="visual-band"><strong>Mitigation</strong><p style="margin:8px 0 0;">Use staged rollouts, monitoring, rollback automation, and blast-radius limits to contain failures.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container summary-grid">
+        <div class="card reveal">
+          <span class="badge">Critical thinking reflection</span>
+          <h3>How my perspective changed</h3>
+          <p>At the beginning of the analysis, I viewed AI automation mainly as a productivity tool. After examining the case, I recognized that AI systems must be evaluated as part of a larger sociotechnical environment. The key question is not only whether an AI tool can complete a task, but whether it can do so safely, transparently, and within appropriate operational boundaries.</p>
+        </div>
+        <div class="card reveal delay-1">
+          <span class="badge">Portfolio value</span>
+          <h3>Why this completes the portfolio</h3>
+          <p>This final artifact adds an ethics and governance dimension to the portfolio. Combined with the previous artifacts, it shows a broader AI/ML competency profile: building, analyzing, comparing, deploying, and evaluating AI responsibly.</p>
+          <div class="tags">
+            <span class="tag">Responsible AI</span>
+            <span class="tag">Governance</span>
+            <span class="tag">Reliability</span>
+            <span class="tag">Risk Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sources-section">
+      <div class="container">
+        <div class="card reveal">
+          <span class="badge">Sources</span>
+          <h3>Research foundation</h3>
+          <p>These sources support the discussion of AI risk, safety, and governance principles used in this artifact.</p>
+          <ul class="source-list">
+            <li>Amodei, D., Olah, C., Steinhardt, J., Christiano, P., Schulman, J., &amp; Mané, D. (2016). Concrete problems in AI safety. <em>arXiv</em>.</li>
+            <li>National Institute of Standards and Technology. (2023). <em>Artificial Intelligence Risk Management Framework (AI RMF 1.0)</em>.</li>
+            <li>Leveson, N. (2011). <em>Engineering a safer world: Systems thinking applied to safety</em>. MIT Press.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>© 2026 Zhenyuan You · Artifact 5</div>
+      <div><a href="artifacts.html">All artifacts</a> · <a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -128,10 +128,11 @@ main{padding-bottom:56px}
   margin:0; font-size:2.05rem; color:#fff; font-family:"Playfair Display", Georgia, serif;
 }
 .section-header p{margin:10px 0 0;color:var(--muted);max-width:760px}
-.grid-2,.grid-3,.grid-4{display:grid;gap:20px}
+.grid-2,.grid-3,.grid-4,.grid-5{display:grid;gap:20px}
 .grid-2{grid-template-columns:repeat(2,1fr)}
 .grid-3{grid-template-columns:repeat(3,1fr)}
 .grid-4{grid-template-columns:repeat(4,1fr)}
+.grid-5{grid-template-columns:repeat(5,1fr)}
 .card{padding:24px}
 .card h3{margin:14px 0 10px;color:#fff;font-size:1.28rem}
 .card p{margin:0;color:var(--muted)}
@@ -202,6 +203,9 @@ main{padding-bottom:56px}
   padding:18px 20px;border-left:4px solid var(--gold);
   background:rgba(215,179,93,.08); border-radius:0 16px 16px 0; color:var(--muted)
 }
+.source-list{margin:16px 0 0; padding-left:20px; color:var(--muted)}
+.source-list li{margin-bottom:10px}
+.compact-overview{font-size:.95rem}
 .footer{
   border-top:1px solid rgba(36,69,111,.8);
   padding:26px 0 44px; color:var(--muted)
@@ -214,13 +218,13 @@ main{padding-bottom:56px}
 }
 @media (max-width: 1100px){
   .hero-grid.hero-grid-3,.hero-grid,.summary-grid{grid-template-columns:1fr}
-  .grid-3{grid-template-columns:1fr 1fr}
+  .grid-3,.grid-5{grid-template-columns:1fr 1fr}
   .pipeline{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width: 760px){
   .container{width:min(var(--max), calc(100% - 28px))}
   .nav-inner{padding:12px 0;align-items:flex-start}
   .nav-links{gap:14px}
-  .grid-2,.grid-3,.grid-4,.metrics,.decision,.hero-stats,.pipeline{grid-template-columns:1fr}
+  .grid-2,.grid-3,.grid-4,.grid-5,.metrics,.decision,.hero-stats,.pipeline{grid-template-columns:1fr}
   .hero h1,.page-hero h1{font-size:2.3rem}
 }
